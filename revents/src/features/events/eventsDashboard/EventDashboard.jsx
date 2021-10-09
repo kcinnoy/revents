@@ -12,11 +12,20 @@ export default function EventDashboard({ formOpen, setFormOpen, selectEvent, sel
         setEvents([...events, event]);
     }
 
+    function handleUpdateEvent(updatedEvent) {
+        setEvents(events.map(evt => evt.id === updatedEvent.id ? updatedEvent : evt));
+        selectEvent(null);
+    }
+
+    function handleDeleteEvent(eventId) {
+        setEvents(events.filter(evt => evt.id !== eventId));
+    }
+
     return (
         <div>
             <Grid>
                 <GridColumn width={10}>
-                    <EventList events={events} selectEvent={selectEvent} />
+                    <EventList events={events} selectEvent={selectEvent} deleteEvent={handleDeleteEvent} />
                 </GridColumn>
                 <GridColumn width={6}>
                     {/* {formOpen && <EventForm setFormOpen={setFormOpen} />} */}
@@ -26,6 +35,7 @@ export default function EventDashboard({ formOpen, setFormOpen, selectEvent, sel
                             setEvents={setEvents}
                             createEvent={handleCreateEvent}
                             selectedEvent={selectedEvent}
+                            updateEvent={handleUpdateEvent}
                             key={selectedEvent ? selectedEvent.id : null }
                         />
                     )}
