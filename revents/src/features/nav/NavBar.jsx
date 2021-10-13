@@ -27,7 +27,6 @@ export default function NavBar({ setFormOpen }) {
                         <Button
                             positive
                             inverted
-                            content
                             onClick={() => setFormOpen(true)}
                             content='Create Events'
                         />
