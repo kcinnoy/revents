@@ -8,8 +8,8 @@ export default function EventList({ events, selectEvent, deleteEvent }) {
                 <EventListItem
                     event={event}
                     key={event.id}
-                    selectEvent={selectEvent}
-                    deleteEvent={deleteEvent}
+                    //selectEvent={selectEvent}
+                    //deleteEvent={deleteEvent}
                 />
             ))}
         </>
