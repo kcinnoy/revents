@@ -1,4 +1,4 @@
-import {SIGN_IN_USER, SIGN_OUT_USER } from './authConstants';
+import { SIGN_IN_USER, SIGN_OUT_USER } from './authConstants';
 
 export function signInUser(payload) {
     return {
@@ -9,6 +9,6 @@ export function signInUser(payload) {
 
 export function signOutUser() {
     return {
-        type: SIGN_OUT_USER,
+        type: SIGN_OUT_USER
     }
 }
