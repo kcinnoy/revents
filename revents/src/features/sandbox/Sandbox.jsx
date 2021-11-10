@@ -4,6 +4,7 @@ import { Button } from 'semantic-ui-react';
 import { increment, decrement } from './testReducer';
 import { openModal } from '../../app/common/modals/modalReducer';
 import TestPlaceInput from './TestPlaceInput';
+import TestMap from './TestMap';
 
 export default function Sandbox() {
     const dispatch = useDispatch();
@@ -22,6 +23,7 @@ export default function Sandbox() {
             />
             <div style={{margnTop: 15}}>
                 <TestPlaceInput/>
+                <TestMap />
 
             </div>
         </>
