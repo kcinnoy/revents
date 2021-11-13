@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Button } from 'semantic-ui-react';
 import { increment, decrement } from './testReducer';
@@ -9,6 +9,19 @@ import TestMap from './TestMap';
 export default function Sandbox() {
     const dispatch = useDispatch();
     const data = useSelector(state => state.test.data);
+    const defaultProps = {
+        center: {
+            lat: 10.99835602,
+            lng: 77.01502627
+        },
+        zoom: 11,
+    };
+
+    const [location, setLocation] = useState(defaultProps);
+
+    function handleSetLocation(latLng) {
+        setLocation({...location, center: {lat: latLng.lat, lng: latLng.lng }})
+    }
 
     return (
         <>
@@ -22,8 +35,8 @@ export default function Sandbox() {
                 color='teal'
             />
             <div style={{margnTop: 15}}>
-                <TestPlaceInput/>
-                <TestMap />
+                <TestPlaceInput setLocation={handleSetLocation}/>
+                <TestMap location={location} />
 
             </div>
         </>
