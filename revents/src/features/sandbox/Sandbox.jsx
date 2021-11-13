@@ -34,7 +34,7 @@ export default function Sandbox() {
                 content='Open model'
                 color='teal'
             />
-            <div style={{margnTop: 15}}>
+            <div style={{marginTop: 15}}>
                 <TestPlaceInput setLocation={handleSetLocation}/>
                 <TestMap location={location} />
 

@@ -4,7 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector  } from 'react-redux';
 import { signOutUser } from '../auth/authActions';
 
-export default function SignedInMenu({}) {
+export default function SignedInMenu() {
     const dispatch = useDispatch();
     const {currentUser} = useSelector(state => state.auth);
     const history = useHistory();

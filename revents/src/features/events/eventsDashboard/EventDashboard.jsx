@@ -3,7 +3,7 @@ import { Grid, GridColumn } from 'semantic-ui-react';
 import EventList from './EventList';
 import { useSelector } from 'react-redux';
 
-export default function EventDashboard({}) {
+export default function EventDashboard() {
   const {events} = useSelector(state => state.event);
 
     return (

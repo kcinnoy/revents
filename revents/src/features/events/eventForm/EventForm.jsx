@@ -5,7 +5,7 @@ import cuid from 'cuid';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { createEvent, updateEvent } from '../eventActions';
-import { Formik, Form, useFormikContext } from 'formik';
+import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import MyTextInput from '../../../app/common/form/MyTextInput';
 import MyTextArea from '../../../app/common/form/MyTextArea';
@@ -17,7 +17,7 @@ import MyPlaceInput from '../../../app/common/form/MyPlaceInput';
 export default function EventForm({ match, history }) {
     const dispatch = useDispatch();
     const selectedEvent = useSelector(state =>
-        state.event.events.find(e => e.id == match.params.id)
+        state.event.events.find(e => e.id === match.params.id)
     );
 
     const initialValues = selectedEvent ?? {
